@@ -15,6 +15,9 @@ You know that your users will sign in and access all their SaaS applications usi
 3. Sign in as the user that you created in the previous lab.
 
     * Notice that you're signed in to the portal without requiring Multi-Factor Authentication.
-4. In the same browser window, browse to [https://portal.azure.com](https://portal.azure.com).
+
+4. If this is the first time logging in as this user, you may be asked to change the password. If so, complete the password change and make a note of the password so you can use it later when testing.
+
+5. In the same browser window, browse to [https://portal.azure.com](https://portal.azure.com).
 
     * Notice that you're now required to provide more information to keep your account secure. This interrupt is Azure Multi-Factor Authentication kicking in because of the conditional access policy we created. You can stop at this point and close the browser window.

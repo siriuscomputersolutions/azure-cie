@@ -16,7 +16,7 @@ Once you are logged into the Azure portal, we can start exploring things. In the
 
 1. Let's start by touring how to create a resource. In the left-hand portion of the portal click **Create a resource**.
 
-2. A blade labeled **New** appears and displays a list of categories on the left-hand side, labeled Azure Marketplace. This is somewhat like a "Popular Categories" menu, with some of the most common categories visible. If you'd like, you can expand this list to see everything in the **Marketplace** blade with the **See all** link next to the heading. If you do, you can get back to the New blade by clicking the X icon in the upper right of any blades you have opened.
+2. A blade labeled **New** appears and displays a list of categories on the left-hand side, labeled Azure Marketplace. This is somewhat like a "Popular Categories" menu, with some of the most common categories visible. If you'd like, you can expand this list to see everything in the **Marketplace** blade with the **See all** link next to the heading. If you do, you can get back to the New blade by clicking the **X** icon in the upper right of any blades you have opened.
 
 3. Selecting any of items in the Azure Marketplace list will show popular services for that category on the right of the **New** blade. This list is a subset of the entire range of computing resources available for that category. As with the Azure Marketplace, you can click on the **See all** link for a more comprehensive list. We will talk more about this list in subsequent sections.
 
@@ -30,13 +30,11 @@ Once you are logged into the Azure portal, we can start exploring things. In the
 
 2. To the right of **Featured**, click **See all**. The full list of available VM services now appears.
 
-3. Under **Recommended**, click **Windows Server**. A new **Windows Server** blade appears to the right.
+3. Under **Featured**, click **Windows Server** (you may need to click **See More** to the upper-right of Featured list). The Windows Server blade now fills the screen, except for the left-hand pane.
 
-4. To the right of the **Pin blade to dashboard** icon in the blade's title bar, click the **Maximize** icon (it looks like a simple empty square or box). The Windows Server blade now fills the screen, except for the left-hand pane. Scroll down the list to see all of the Windows Server images available.
+4. Scroll down the list to see all of the Windows Server images available.
 
-5. Optionally, you can click the **Restore** icon (similar to the Maximize icon, a simple empty square or box with another one on top) to return to the previous blade view.
-
-6. Click the **X** at the top right-hand corner to close the **Windows Server** blade. You should now see the **New** blade again.
+5. Click the **X** at the top right-hand corner to close the **Windows Server** blade. You should now see the **New** blade again.
 
 ## Filtering results
 
