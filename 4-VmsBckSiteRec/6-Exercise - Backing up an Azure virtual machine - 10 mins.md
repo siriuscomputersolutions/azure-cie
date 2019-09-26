@@ -27,10 +27,14 @@ In this exercise, you'll create a backup of a virtual machine, and monitor the j
 3. In the sidebar, scroll down to **Operations**, select **Backup**, and then use the following information to create a backup:
 
    **Recovery Services vault**
-    * Select **Create new**, and type **azure-backup** for the name.
+    * Select **Create new**, and type **azure-backup-eastus** for the name.
+
+        **Note** - You will use **East US** for this lab, as future labs depend on it, so you will include this in the name.
 
     **Resource group**
-    * Select **New** and type **vmbackups** for the resource group name.
+    * Select the existing resource group named **labvms-eastus**.
+
+        **Note** - You will use **East US** for this lab, as future labs depend on it, so you will use a resource group already created in a previous lab.
 
     **Choose a backup policy**
 
@@ -73,5 +77,11 @@ In this exercise, you'll create a backup of a virtual machine, and monitor the j
 3. Select the **Backup** tab on the **Overview** page to see a summary of all the backup items, storage being used, and the current status of any backup jobs.
 
     ![Screenshot of the Backup dashboard](images/backupvms6.png)
+
+4. Select the **Backup Jobs** under **Monitoring** to see a summary of all the backup jobs and their current status.
+
+    ![Screenshot of the Backup Jobs](images/backupvms7.png)
+
+**Note** - It will take some time for the backup to complete. You can check back later to confirm the job completes.
 
 Congratulations! With a few steps, you backed up a VM in Azure.

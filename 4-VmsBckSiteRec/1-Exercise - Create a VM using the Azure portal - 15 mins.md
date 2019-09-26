@@ -48,7 +48,7 @@ We need to configure the basic parameters of our Ubuntu virtual machine. If some
 
     * The **Subscription** should be set to the subscription you created for this session.
 
-    * Click "New" under **Resource Group** and enter the name as _labvms_.
+    * For the **Resource Group**, choose **_labvms_** from the **Select existing...** dropdown list.
 
     * Enter the **Virtual machine name** as _test-linux-vm1_.
 
@@ -66,26 +66,30 @@ We need to configure the basic parameters of our Ubuntu virtual machine. If some
 
     ![Screenshot showing the Create a VM screen with details filled out](images/vmazureportal4.png)
 
-2. On the **Management** tab, under **Monitoring**, switch **Boot diagnostics** to **Off**.
+2. On the **Networking** tab, under **Virtual network**, change the dropdown list selection to the virtual network you created in a previous lab, named **myVnet**, and confirm the rest of the settings match those from the image below.
 
     ![Screenshot showing the Management tab of create a VM screen](images/vmazureportal5.png)
 
-3. There are several other tabs you can explore to see the settings you can influence during the VM creation. Once you're finished exploring, click **Review + create** to review and validate the settings.
+3. On the **Management** tab, under **Monitoring**, confirm that **Boot diagnostics** is **On**, and that the **Diagnostic storage account** is set to the account you created in the previous lab.
 
-4. On the review screen, Azure will validate your settings. You might need to supply some additional information based on the requirements of the image creator. Verify all the settings are set the way you want, and then click **Create** to deploy and create the VM.
+    ![Screenshot showing the Management tab of create a VM screen](images/vmazureportal5.png)
 
-5. You can monitor the deployment through the **Notifications** panel. Click the icon in the top toolbar to show or hide the panel.
+4. There are several other tabs you can explore to see the settings you can influence during the VM creation. Once you're finished exploring, click **Review + create** to review and validate the settings.
+
+5. On the review screen, Azure will validate your settings. You might need to supply some additional information based on the requirements of the image creator. Verify all the settings are set the way you want, and then click **Create** to deploy and create the VM.
+
+6. You can monitor the deployment through the **Notifications** panel. Click the icon in the top toolbar to show or hide the panel.
 
     ![A screenshot showing th Monitor the deployment progress](images/vmazureportal6.png)
 
-6. The VM deployment process takes a few minutes to complete. You'll receive a notification informing you that the deployment succeeded. Click on the **Go to resource** button to go to the VM overview page.
+7. The VM deployment process takes a few minutes to complete. You'll receive a notification informing you that the deployment succeeded. Click on the **Go to resource** button to go to the VM overview page.
 
     ![Screenshot showing a successful deployment of the Ubuntu image](images/vmazureportal7.png)
 
-7. Here you can see all the information and configuration options for your newly created Ubuntu VM. One of the pieces of information is the **Public IP address**.
+8. Here you can see all the information and configuration options for your newly created Ubuntu VM. One of the pieces of information is the **Public IP address**.
 
     ![Screenshot showing the VM overview page with the public IP address to the VM highlighted.](images/vmazureportal8.png)
 
-8. By default Ubuntu Server 18.04 LTS image doesn't install any public reachable services on the public IP address. However, recall that we enabled password authentication and SSH inbound earlier. This allows you to connect to your VM via the public IP using any SSH client.
+9. By default Ubuntu Server 18.04 LTS image doesn't install any public reachable services on the public IP address. However, recall that we enabled password authentication and SSH inbound earlier. This allows you to connect to your VM via the public IP using any SSH client.
 
 Congratulations! With a few steps, you deployed a VM that runs Linux.

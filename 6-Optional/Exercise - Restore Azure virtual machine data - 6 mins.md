@@ -24,7 +24,7 @@ In this exercise, you'll see how to restore a successful backup to replace a VM 
 
    **Resource Group**
 
-    * Select **vmbackups**.
+    * Select **labvms-eastus**.
 
    **Storage account name**
 
@@ -32,35 +32,55 @@ In this exercise, you'll see how to restore a successful backup to replace a VM 
 
     **Location**
 
-    * Select a **Region** close to you, from the list. Use the same region as you have for all previous labs.
+    * Select **East US** for the **Location**, from the list.
+
+    **Note** - You **MUST** use **East US** for this lab, as future tasks in this lab depend on it.
+
+    **Replication**
+
+    * Select **Locally-redundant storage (LRS)** for **Replication**, from the list.
+
+3. Confirm the Basics settings are correct and click **Review + create**.
 
      ![Specify storage account options](images/restorevms2.png)
-
-3. Select **Review + create**.
 
 4. On the **Create storage account** page, select **Create**.
 
 5. Wait for the storage account to be deployed.
 
+### Confirm the backup job has completed before proceeding
+
+The backup job you started in a previous lab, must be completed, before you can proceed with the restore proceedure.
+
+1. In the [Azure portal](https://portal.azure.com/), select **All resources** on the left side.
+
+2. Select the **azure-backup-eastus** Recovery Services vault.
+
+3. Select the **Backup Jobs** under **Monitoring** to see a summary of all the backup jobs and their current status.
+
+    ![Screenshot of the Backup Jobs](images/restorevms3.png)
+
+**Note** - Do not proceed with this lab unless the backup job is completed.
+
 ### Stop the VM to allow for the restore
 
 A backup can't be restored if the VM is allocated and running. If you forget to stop the VM, you'll see an error that is similar to the following example.
 
-![Screenshot showing the error details when a VM is running](images/restorevms3.png)
+![Screenshot showing the error details when a VM is running](images/restorevms4.png)
 
 To prevent this error, use the following steps.
 
 1. In the far left menu, select **Virtual machines**, and then select **test-win-vm1**.
 
-    ![Screenshot of the VM overview page](images/restorevms4.png)
+    ![Screenshot of the VM overview page](images/restorevms5.png)
 
 2. Select **Stop** to shut down the VM.
 
-    ![Screenshot of stopping the VM](images/restorevms5.png)
+    ![Screenshot of stopping the VM](images/restorevms6.png)
 
 3. In the **Stop this virtual machine** popup, select **OK**.
 
-    ![Screenshot of stop this VM prompt](images/restorevms6.png)
+    ![Screenshot of stop this VM prompt](images/restorevms7.png)
 
 ### Restore the VM
 
@@ -68,15 +88,15 @@ The Recovery Services vaults are accessible at the subscription level. However, 
 
 1. In the left menu, under **Operations**, select **Backup**.
 
-    ![Screenshot of the Backup operation for a VM](images/restorevms7.png)
+    ![Screenshot of the Backup operation for a VM](images/restorevms8.png)
 
 2. To restore the virtual machine, at the top select **Restore VM**.
 
-    ![Screenshot of Restore VM](images/restorevms8.png)
+    ![Screenshot of Restore VM](images/restorevms9.png)
 
 3. Select the restore point to use for the recovery, then select **OK**.
 
-    ![Screenshot showing selecting a restore point](images/restorevms9.png)
+    ![Screenshot showing selecting a restore point](images/restorevms10.png)
 
 4. In the **Restore Configuration** window, select **Replace Existing** and use the following information to configure the restore:
 
@@ -88,7 +108,7 @@ The Recovery Services vaults are accessible at the subscription level. However, 
 
     * Select the storage account you created previously.
 
-        ![Screenshot showing the restore configuration options](images/restorevms10.png)
+        ![Screenshot showing the restore configuration options](images/restorevms11.png)
 
 5. Select **OK**.
 
@@ -98,7 +118,7 @@ The Recovery Services vaults are accessible at the subscription level. However, 
 
 1. At the top of the page, select **View all Jobs**.
 
-    ![Screenshot of the restore progress](images/restorevms11.png)
+    ![Screenshot of the restore progress](images/restorevms12.png)
 
 2. Select the restore job, you can now monitor the progress of the VM restore:
 

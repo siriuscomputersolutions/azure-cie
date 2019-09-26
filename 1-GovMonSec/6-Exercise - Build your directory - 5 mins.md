@@ -64,4 +64,4 @@ We will be assigning the policy that we create to a group of users, but we need 
 
 ![A screenshot showing Create Active Directory Group with selection boxes drawing attention to the previous steps](images/builddirectory2.png)
 
-In this unit, you learned how to create a trial licensed directory, a test user, and a pilot group in the Azure portal.
+In this lab you learned how to create a trial licensed directory, a test user, and a pilot group in the Azure portal.

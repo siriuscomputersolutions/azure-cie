@@ -53,11 +53,11 @@ An **RDP** file is a text file that contains a set of name/value pairs that defi
 
 2. In the **Remote Desktop Connection** dialog box, note the security warning and the remote computer IP address, then click **Connect**.
 
-3. In the **Windows Security** dialog box, enter your username and password that you used in steps 6 and 7.
+3. In the **Windows Security** dialog box, enter your **vmname\username** and **password** that you used in the previous lab.
 
     **Note**
 
-    If you are using a Windows client to connect to the VM, it will default to known identities on your machine. You can click the **More choices** option and select "Use a different account" to let you enter a different username/password combination.
+    If you are using a Windows client to connect to the VM, it will default to known identities on your machine. You can click the **More choices** option and select "Use a different account" to let you enter a different **vmname\username** and **password** combination.
 
 4. In the second **Remote Desktop Connection** dialog box, note the certificate errors, then click **Yes**.
 
@@ -89,7 +89,7 @@ The more interesting thing to observe in the list of drives is what is _missing_
 
 Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical drive.
 
-1. Launch the **Disk Management** tool from the Start Menu. You may have to go to the Computer Management tool first, then Disk Management, or try searching for "Disk Management" in the Start Menu.
+1. Launch the **Computer Management** tool from the Start Menu (under Windows Administrative Tools). You have to go to the Computer Management tool first, then Disk Management, or try searching for "Computer Management" in the Start Menu.
 
 2. It will display a warning that it has detected an uninitialized disk.
 
@@ -97,8 +97,16 @@ Any additional drives you create from scratch will need to be initialized and fo
 
 3. Click **OK** to initialize the disk. It will then show up in the list of volumes where you can format it and assign a drive letter.
 
-4. Open File Explorer and you should now see your data drive.
+4. Right-click on the new **Disk 2**, select **New Simple Volume**, then click **Next** all the way through, then click **Finish**.
 
-5. Go ahead and close the RDP client to sign out of the VM. The server will continue to run.
+    ![Screenshot showing the disk management tool new simple volume menu.](images/connectwinrdp3.png)
+
+5. Open File Explorer and you should now see your data drive.
+
+    ![Screenshot showing file explorer highlighting the new volume.](images/connectwinrdp4.png)
+
+6. Go ahead and close the RDP client to sign out of the VM. The server will continue to run.
 
 RDP allows you to work with the Azure VM just like a local computer. With Desktop UI access, you can administer this VM as you would any Windows computer: installing software, configuring roles, adjusting features and other common tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+
+Congratulations! With a few steps, you remotely managed a VM that runs Windows.

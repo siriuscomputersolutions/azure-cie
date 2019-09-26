@@ -12,12 +12,13 @@ Let's connect to our Linux VM with SSH, and configure Apache, so we have a runni
 
 ## Get the public IP address of the VM
 
-1. In the Azure portal, ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel allows you to
+1. In the Azure portal, navigate to **Virtual machines** and click on **test-linux-vm** to open the **Overview** panel for the virtual machine that you created earlier. You can find the VM under **All Resources** if you need to open it. The overview panel allows you to
 
     * See if the VM is running
     * Stop or restart the VM
     * Get the public IP address of the VM
     * See the activity of the CPU, disk, and network
+
 2. Click the **Connect** button at the top of the pane.
 
 3. In the **Connect to virtual machine** panel, note the **IP address** and **Port number** settings. On the **SSH** tab, you will also find the command you need to execute locally to connect to the VM. Copy the command to the clipboard.
@@ -104,3 +105,5 @@ Apache is available within Ubuntu's default software repositories, so we will in
 4. Finally, we can try retrieving the default page through the public IP address. However, even though the web server is running on the VM, you won't get a valid connection or response. Do you know why?
 
 We need to perform one more step to be able to interact with the web server. Our virtual network is blocking the inbound request. We can change that through configuration. Let's look at allowing the inbound request next.
+
+Congratulations! With a few steps, you connected to a VM that runs Linux with SSH.

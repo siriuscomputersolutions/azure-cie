@@ -20,15 +20,15 @@ Azure should have created a security group for us because we indicated we wanted
 
 3. Make sure the **Resource Manager** deployment model is selected and click **Create**.
 
-4. Provide a **Name** for your security group. Again, naming conventions are a good idea here. Let's use **test-web-eus-nsg1** for **Test Web Network Security Group #1 in East US**. You'll likely want to change the location portion of the name to reflect where you put the security group.
+4. Provide a **Name** for your security group. Again, naming conventions are a good idea here. Let's use **test-web-nsg1** for **Test Web Network Security Group #1**.
 
-5. Select the proper **Subscription** and use your existing **Resource group**.
+5. Select the proper **Subscription** and use your existing **Resource group** named **labvms**.
 
-6. Finally, put it into the same **Location** as the VM / virtual network. This is important; you won't be able to apply this resource if it's in a different location.
+6. Finally, select the same **Location** as the VM / virtual network. This is important; you won't be able to apply this resource if it's in a different location.
 
 7. Click **Create** to create the group.
 
-## Add a new inbound rule to our network security group
+## Add new inbound rules to our network security group
 
 Deployment should complete quickly. When it's finished, we can add new rules to our security group:
 
@@ -53,7 +53,9 @@ Deployment should complete quickly. When it's finished, we can add new rules to 
 
 3. Click the **Inbound security rules** section in the **Settings** panel for the security group.
 
-4. Click **+ Add** to add a new security rule.
+### Add http inbound rules to our network security group
+
+1. Click **+ Add** to add a new security rule.
 
     ![Screenshot of the Azure portal showing the inbound security rules settings with the Add button highlighted.](images/confignetlinux1.png)
 
@@ -63,59 +65,53 @@ Deployment should complete quickly. When it's finished, we can add new rules to 
 
     The advanced mode provides the ability to customize the rule completely. However, if you need to configure a known protocol, the basic mode is a bit easier to work with.
 
-5. Switch to the **Basic** mode.
+2. Switch to the **Advanced** mode.
 
-6. Add the information for our HTTP rule:
+3. Add the information for our HTTP rule:
 
     * Set the **Service** to be HTTP. This will set your port range up for you.
     * Set the **Priority** to **1000**. It has to be a lower number than the default **Deny** rule. You can start the range at any value, but it's recommended that you give yourself some space in case an exception needs to be created later.
     * Give the rule a name; we'll use **allow-http-traffic**.
     * Give the rule a description.
-7. Switch back to the **Advanced** mode. Notice that our settings are still present. We can use this panel to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. If you know the current IP address of your local computer, you can try that. Otherwise, leave the setting as **Any**, so you can test the rule.
 
-8. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+4. Switch between the **Advanced** and **Basic**  modes. Notice that our settings are still present. We can use these panels to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. Leave the setting as **Any**, so you can test the rule.
+
+5. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+
+### Add ssh inbound rules to our network security group
+
+1. Click **+ Add** to add a new security rule.
+
+2. Switch to the **Advanced** mode.
+
+3. Add the information for our SSH rule:
+
+    * Set the **Service** to be SSH. This will set your port range up for you.
+    * Set the **Priority** to **1010**.
+    * Give the rule a name; we'll use **allow-ssh-traffic**.
+    * Give the rule a description.
+
+4. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+
+    ![A screenshot of the Azure portal showing the inbound security rules for the network security group.](images/confignetlinux3.png)
 
 ## Apply the security group
 
-Recall that we can apply the security group to a network interface to guard a single VM or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common, so let's do that. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM that is using the virtual network.
+Recall that we can apply the security group to a network interface to guard a single VM or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common, but we are going to replace the NSG assigned to the VM. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM that is using the virtual network.
 
-1. Switch to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. Navigate to the **Overview** panel for the virtual machine named _test-linux-vm1_. You can find the VM under **All Resources**.
 
 2. Select the **Networking** item in the **Settings** section.
 
-3. In the networking properties, you will find information about the networking applied to the VM, including the **Virtual network/subnet**. This is a clickable link to get to the resource. Click it to open the virtual network. This link is _also_ available on the **Overview** panel of the VM. Either of these will open the **Overview** of the virtual network.
+3. In the networking properties, you will find information about the networking applied to the VM, including the **Network Interface**. This is a clickable link to get to the resource. Click it to open the network interface.
 
-4. In the **Settings** section, select the **Subnets** item.
+4. In the **Settings** section, select the **Network security group** item, and click **Edit**.
 
-5. We should have a single subnet defined (default) from when we created the VM + network earlier. Click the item in the list to open the details.
+5. Click the **Network security group** entry.
 
-6. Click the **Network security group** entry.
+6. Select your new security group: **test-web-nsg1**. There should be another group here as well that was created with the VM.
 
-7. Select your new security group: **test-web-eus-nsg1**. There should be another group here as well that was created with the VM.
-
-8. Click **Save** to save the change. It will take a minute to apply to the network.
-
-## Update the NSG on the network interface
-
-Port 80 is open on the NSG applied to the subnet, but it's still going to be blocked because it's not currently allowed on the NSG applied to the network interface. Let's fix that and then we should be able to connect.
-
-1. Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
-
-2. In the **Settings** section, select the **Networking** item.
-
-3. You should see the NSG rules for the subnet in the top section and the NSG rules for the network interface in the bottom section of the same tab. In the bottom section, for the NSG rules for the network interface, select **Add inbound port rule**.
-
-    ![Screenshot that shows the "Add inbound port rule" button in the network security group > network interface section.](images/confignetlinux3.png)
-
-4. Switch to the **Basic** mode.
-
-5. Add the information for our HTTP rule:
-
-    * Set the **Service** to be HTTP. This will set your port range up for you.
-    * Set the **Priority** to **310**.
-    * Give the rule a name; we'll use **allow-http-traffic**.
-    * Give the rule a description.
-6. Click **Add** to create the rule.
+7. Click **Save** to save the change. It will take a minute to apply to the network.
 
 ## Verify the rules
 
@@ -133,9 +129,7 @@ Let's validate the change:
 
     ![Screenshot of a web browser showing the Apache default web page hosted at the IP of the new Linux VM.](images/confignetlinux5.png)
 
-## One more thing
-
-Security rules are tricky to get right. We made a mistake when we applied this new security group - we lost our SSH access! To fix this, you can add another rule to the security group applied to the subnet to allow SSH access. Make sure to restrict the inbound TCP/IP addresses for the rule to be the ones you own.
-
-**Warning**
+**Warning** -
 Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by SSH to be something other than the default. Keep in mind that changing ports is not sufficient to stop attacks. It simply makes it a little harder to discover.
+
+Congratulations! With a few steps, you deployed a network security group to a VM that runs Linux.

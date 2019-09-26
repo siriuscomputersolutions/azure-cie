@@ -4,11 +4,31 @@
 
 In this unit, you'll deploy your C Sharp web application to App Service.
 
-## Login to the Azure Portal
+## Login to the Azure Portal and Open Azure Cloud Shell in-line
 
 1. Open the [Azure portal](https://portal.azure.com) in a browser.
 
 2. Sign into Azure using the Microsoft account email address and password you created for this session.
+
+3. Click the **Cloud Shell** icon in the toolbar to launch the in-line Cloud Shell window
+
+4. If promoted, then click **Bash** in the window.
+
+    ![screenshot showing azure portal cloud shell](images/webappcode1a.png)
+
+5. If prompted, select your subscription, and click **Create storage**.
+
+    ![screenshot showing subscription for shell storage](images/webappcode2a.png)
+
+6. To start the Azure CLI, enter the following command and press Enter.
+
+        az
+
+    ![screenshot showing cloud shell bash prompt](images/webappcode3a.png)
+
+    You should see something like the following list of available commands:
+
+    ![screenshot showing screen output of az command](images/webappcode4a.png)
 
 ## Deploy with `az webapp up`
 
@@ -22,7 +42,7 @@ First, we need to gather some information about our web app resource. Run these 
     APPSKU=$(az appservice plan list --query [0].sku.name --output tsv)
     APPLOCATION=$(az appservice plan list --query [0].location --output tsv)
 
-Now, run `az webapp up` with the appropriate values. Make sure you are in the `TestWebAppXXXXXXX` directory before running this command.
+Now, run `az webapp up` with the appropriate values. Make sure you are in the `TestNetWebAppXXXXXXX` directory before running this command.
 
     az webapp up --name $APPNAME --resource-group $APPRG --plan $APPPLAN --sku $APPSKU --location "$APPLOCATION"
 

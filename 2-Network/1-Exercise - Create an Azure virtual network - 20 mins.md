@@ -15,19 +15,21 @@ If you are using the CloudShell environment, select the **Bash** shell option. I
 
 ### Option 1 - Open Azure Cloud Shell in a seperate browser window
 
-1. Open the [Azure Cloud Shell](https://shell.azure.com) in a browser.
+1. Open the [Azure Cloud Shell](https://shell.azure.com) in a new **InPrivate browser window**.
 
 2. Sign into Azure using the Microsoft account email address and password you created for this session.
 
-3. Click **Bash**.
+3. If prompted, select your **Default Directory**.
+
+4. If prompted, Click **Bash**.
 
     ![screenshot showing welcome to cloud shell](images/createvnet1.png)
 
-4. Select your subscription, and click **Create storage**.
+5. Select your subscription, and click **Create storage**.
 
     ![screenshot showing subscription for shell storage](images/createvnet2.png)
 
-5. To start the Azure CLI, enter the following command and press Enter.
+6. To start the Azure CLI, enter the following command and press Enter.
 
         az
 
@@ -64,6 +66,8 @@ If you are using the CloudShell environment, select the **Bash** shell option. I
 ## Create a resource group
 
 First, create a resource group to contain all of the resources you'll create in this module. Name it `vm-networks` and replace `<location>` in the following command with the name of the region in which you'd like the group to be created.
+
+**Note** - Chose a location (region) close to you, from the list. Document this location (region) name for use in all future labs.
   
     az group create --location <location> --name vm-networks
 
