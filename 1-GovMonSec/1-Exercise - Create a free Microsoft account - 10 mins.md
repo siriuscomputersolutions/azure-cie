@@ -24,19 +24,11 @@ Please note the use of the pass is subject to the following Terms and Conditions
 
 Creating a Microsoft account is as simple as the following, two step process:
 
-1. Create the Microsoft account (with existing email address, a new email address, or a phone number)
+1. Create the Microsoft account with a new email address.
 
 2. Verify the email address or phone associated with the account
 
-To proceed, you will need to choose one of the following three options, and complete the proceedure provided for that option, later in this guide:
-
-1. **Use an existing personal email address** - You can use an existing personal email address (ex. Outlook, Gmail, Yahoo), not already associated with a Microsoft account, to create a new one.
-
-2. **Use a phone number** - You can use an existing mobile phone number (that you have with you), not already associated with a Microsoft account, to create a new one.
-
-3. **Get a new email address** - You can create a new Microsoft email account and Microsoft account together.
-
-### First Option: Use an existing personal email address
+### Creating a Microsoft Account with a new email address
 
 1. Open a browser and navigate to: account.microsoft.com
 
@@ -47,53 +39,7 @@ To proceed, you will need to choose one of the following three options, and comp
 
 3. In the Create account dialog, do the following:
 
-* Enter an existing personal email address (ex. Outlook, Gmail, Yahoo), not already associated with a Microsoft account **(securly store this email address for later use)**, and click "Next".
-![screenshot showing create account form](images/msaccount2.png)
-
-* Enter a password **(securly store this password for later use)**, and click "Next".
-![screenshot showing create a password form](images/msaccount3.png)
-
-* Enter the verification code and click "Next" to create the account.
-![screenshot showing verification code form](images/msaccount4.png)
-
-* Your browser will be redirected to the Microsoft accounts page.
-![screenshot showing microsoft account page](images/msaccount5.png)
-
-### Second Option: Use a phone number
-
-1. Open a browser and navigate to: account.microsoft.com
-
-    **Note:** It is recommended you close all browsers and open a new In-Private Browser session. Other log-ins can persist and cause errors during the account setup.
-
-2. Click "Create a Microsoft account >" link to get started.
-![screenshot showing microsoft account page](images/msaccount1.png)
-
-3. In the Create account dialog, do the following:
-
-* Click "Use a phone number instead", enter an existing mobile phone number (that you have with you), not already associated with a Microsoft account, and click "Next".
-![screenshot showing phone number form](images/msaccount6.png)
-
-* Enter a password **(securly store this password for later use)**, and click "Next".
-![screenshot showing create a password form](images/msaccount7.png)
-
-* Enter the Microsoft account security code you received on your mobile phone, in the verification form, and click "Next".
-![screenshot showing phone number verification form](images/msaccount8.png)
-
-* Your browser will be redirected to the Microsoft accounts page.
-![screenshot showing microsoft account page](images/msaccount5.png)
-
-### Third Option: Get a new email address
-
-1. Open a browser and navigate to: account.microsoft.com
-
-    **Note:** It is recommended you close all browsers and open a new In-Private Browser session. Other log-ins can persist and cause errors during the account setup.
-
-2. Click "Create a Microsoft account >" link to get started.
-![screenshot showing microsoft account page](images/msaccount1.png)
-
-3. In the Create account dialog, do the following:
-
-* Click "Get a new email address" and your account login information and select “Sign In”.
+* Click "Get a new email address", enter your new account information **(securly store this address for later use) and select **Next**.
 ![screenshot showing create a password form](images/msaccount9.png)
 
 * Enter a password **(securly store this password for later use)**, and click "Next".
@@ -105,4 +51,4 @@ To proceed, you will need to choose one of the following three options, and comp
 * Your browser will be redirected to the Microsoft accounts page.
 ![screenshot showing microsoft account page](images/msaccount5.png)
 
-Congratulations! You have now successfully set up an Azure Pass account, and should be on the Azure portal home page.
+Congratulations! You have now successfully set up a Microsoft Account, and should be on the Azure portal home page.
