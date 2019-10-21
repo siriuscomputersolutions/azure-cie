@@ -23,21 +23,21 @@ If you are using the CloudShell environment, select the **Bash** shell option. I
 
 4. If prompted, Click **Bash**.
 
-    ![screenshot showing welcome to cloud shell](images/createvnet1.png)
+    ![screenshot showing welcome to cloud shell](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet1.PNG)
 
 5. Select your subscription, and click **Create storage**.
 
-    ![screenshot showing subscription for shell storage](images/createvnet2.png)
+    ![screenshot showing subscription for shell storage](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet2.PNG)
 
 6. To start the Azure CLI, enter the following command and press Enter.
 
         az
 
-    ![screenshot showing cloud shell bash prompt](images/createvnet3.png)
+    ![screenshot showing cloud shell bash prompt](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet3.PNG)
 
     You should see something like the following list of available commands:
 
-    ![screenshot showing screen output of az command](images/createvnet4.png)
+    ![screenshot showing screen output of az command](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet4.PNG)
 
 ### Option 2 - Login to the Azure Portal and Open Azure Cloud Shell in-line
 
@@ -47,21 +47,21 @@ If you are using the CloudShell environment, select the **Bash** shell option. I
 
 3. Click the **Cloud Shell** icon in the toolbar to launch the in-line Cloud Shell window, then click **Bash** in the window.
 
-    ![screenshot showing azure portal cloud shell](images/createvnet5.png)
+    ![screenshot showing azure portal cloud shell](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet5.PNG)
 
 4. Select your subscription, and click **Create storage**.
 
-    ![screenshot showing subscription for shell storage](images/createvnet6.png)
+    ![screenshot showing subscription for shell storage](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet6.PNG)
 
 5. To start the Azure CLI, enter the following command and press Enter.
 
         az
 
-    ![screenshot showing cloud shell bash prompt](images/createvnet7.png)
+    ![screenshot showing cloud shell bash prompt](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet7.PNG)
 
     You should see something like the following list of available commands:
 
-    ![screenshot showing screen output of az command](images/createvnet8.png)
+    ![screenshot showing screen output of az command](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet8.PNG)
 
 ## Create a resource group
 
