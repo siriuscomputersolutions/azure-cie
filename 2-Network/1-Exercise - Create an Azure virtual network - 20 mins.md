@@ -6,40 +6,14 @@ In this exercise, you will create a virtual network in Microsoft Azure. You will
 
 ## Log in to your subscription with the Azure CLI
 
-This first lab will use the Azure CLI. If you have a local installation of the Azure CLI, feel free to use it — make sure to use `az account` to log in to the subscription you want to use. If not, you can log into your Azure account and use the Cloud Shell, either in-line, or in a seperate browser window.
+This first lab will use the Azure CLI. If you have a local installation of the Azure CLI, feel free to use it — make sure to use `az account` to log in to the subscription you want to use. If not, you can log into your Azure account and use the Cloud Shell.
 
 You will also be using **Bash** in the **Azure Cloud Shell** in this lab. For more information please refer to [Quickstart for Bash in Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart).
 
 **Note**
 If you are using the CloudShell environment, select the **Bash** shell option. If you are using PowerShell, locally or in the cloud, then you will need to escape all empty parameters by changing `""` to `'""'` to properly pass an empty string into the command. Without this, PowerShell will not pass the empty string, and you will get an error from the command indicating it's missing a parameter. All labs assume you are using Bash.
 
-### Option 1 - Open Azure Cloud Shell in a seperate browser window
-
-1. Open the [Azure Cloud Shell](https://shell.azure.com) in a new **InPrivate browser window**.
-
-2. Sign into Azure using the Microsoft account email address and password you created for this session.
-
-3. If prompted, select your **Default Directory**.
-
-4. If prompted, Click **Bash**.
-
-    ![screenshot showing welcome to cloud shell](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet1.PNG)
-
-5. Select your subscription, and click **Create storage**.
-
-    ![screenshot showing subscription for shell storage](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet2.PNG)
-
-6. To start the Azure CLI, enter the following command and press Enter.
-
-        az
-
-    ![screenshot showing cloud shell bash prompt](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet3.PNG)
-
-    You should see something like the following list of available commands:
-
-    ![screenshot showing screen output of az command](https://github.com/siriuscomputersolutions/azure-cie/blob/master/2-Network/images/createvnet4.PNG)
-
-### Option 2 - Login to the Azure Portal and Open Azure Cloud Shell in-line
+### Login to the Azure Portal and Open Azure Cloud Shell in-line
 
 1. Open the [Azure portal](https://portal.azure.com) in a browser.
 
